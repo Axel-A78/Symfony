@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\public",
+    "\\src",
+    "\\src\\Controller",
+    "\\templates",
+    "\\templates\\compte_rendu"
+  ],
+  "SelectedNode": "\\templates\\compte_rendu\\show.html.twig",
+  "PreviewInSolutionExplorer": false
+}

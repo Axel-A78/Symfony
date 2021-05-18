@@ -6,33 +6,7 @@
 
 <div class="bg-gray-300 m-10 border-2 border-gray-500">
 
-  <div class="grid grid-cols-8 gap-10">
-    <!-- 1 -->
-    <div class="col-span-2 m-5">
-        <form action="" class="grid grid-flow-row gap-5">
-            <div>
-                <label>Sélectionner visiteur</label>
-                <select class="w-full" name="" id="">
-
-                </select>
-            </div>
-            <div>
-                <label>Mois</label>
-                <select class="w-full" name="" id="">
-
-                </select>
-            </div>
-            <div>
-                <label>Année</label>
-                <select class="w-full" name="" id="">
-
-                </select>
-            </div>
-            <div>
-                <button class="transition duration-500 bg-green-500 text-white w-full rounded-md hover:bg-green-600" type="submit">Afficher</button>
-            </div>
-        </form>
-    </div>
+  
     <!-- 2 -->
     <div class="col-span-6 m-5">
 
@@ -50,18 +24,19 @@
                         <td class="border border-black p-1 " ><p class="flex justify-center">Consulter</p></td>
                     </tr>
 
-                    {% for rapportvisite in rapportvisites %}
-
+                    
                     <tr class="">
                         {# foreach #}
-                        <td class="border border-black p-1 " ><p class="flex justify-center">Praticien</p></td>
-                        <td class="border border-black p-1 " ><p class="flex justify-center">Ville</p></td>
-                        <td class="border border-black p-1 " ><p class="flex justify-center">Date Visite</p></td>
-                        <td class="border border-black p-1 " ><p class="flex justify-center">Date Rédaction</p></td>
-                        <td class="border border-black p-1 " ><p class="flex justify-center">Lu</p></td>
-                        <td class="border border-black p-1" ><a class="transition duration-500 bg-indigo-500 text-white flex justify-center rounded-md hover:bg-indigo-600 m-1 p-1" href="/compterendu/show">Consulter</a></td>
+                        {% for rapportvisite in rapportvisites %}                     
+                        
+                        <td class="border border-black p-1 " ><p class="flex justify-center"><li>{{ rapportvisite.visiteur.praticien.nom }}</li></p></td>
+                        <td class="border border-black p-1 " ><p class="flex justify-center"><li>{{ rapportvisite.visiteur.praticien.ville }}</li></p></td>
+                        <td class="border border-black p-1 " ><p class="flex justify-center"><li>{{ rapportvisite.datevisite }}</li></p></td>
+                        <td class="border border-black p-1 " ><p class="flex justify-center"><li>{{ rapportvisite.daterapport }}</li></p></td>
+                        <td class="border border-black p-1 " ><p class="flex justify-center"><li>{{ rapportvisite.etat }}</li></p></td>
+                        <td class="border border-black p-1"  ><a class="transition duration-500 bg-indigo-500 text-white flex justify-center rounded-md hover:bg-indigo-600 m-1 p-1" href="/compterendu/show/{{rapportvisite.id}}">Consulter</a></td>
                     </tr>
-
+                        {% endfor %}
                 </table>
             </div>
         </div>

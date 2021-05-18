@@ -77,7 +77,7 @@ class AppFixtures extends Fixture
         $rapportvisite = array();
         for ($i = 0; $i < 100; $i++) {
             $rapportvisite[$i] = new RapportVisite();
-            $rapportvisite[$i]->setVisiteur($visiteur[$i % 3]);
+            $rapportvisite[$i]->setVisiteur($visiteur[$i % 100]);
             $rapportvisite[$i]->setBilan($faker->text($maxNbChars = 255));
             $rapportvisite[$i]->setDateVisite($faker->date($format = 'Y-m-d', $max = 'now'));
             $rapportvisite[$i]->setDateRapport($faker->date($format = 'Y-m-d', $max = 'now'));

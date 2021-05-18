@@ -2,40 +2,25 @@
 
 {% block title %}Détails du compte-rendu{% endblock %}
 
-{% block content %}
-    <div class="bg-gray-300 m-10 border-2 border-gray-500 flex justify-center">
 
-        <div class="bg-white border-2 border-gray-400 w-1/2 m-5">
-            <div class="m-5">
-                <h5 class="text-xl text-indigo-500 flex justify-center">
-                    Compte rendu num :
-                </h5>
-                <p>
-                    Nom : 
-                </p>
-                <p>
-                    Ville : 
-                </p>
-                <p>
-                    Date Visite : 
-                </p>
-                <p>
-                    Date Rédaction : 
-                </p>
-                <p>
-                    Coefficients de confiance : 
-                </p>
-                <p>
-                    Motifs : 
-                </p>
-                <p>
-                    Bilan : 
-                </p>
-                <p>
-                    Matricule : 
-                </p>
-            </div>
-        </div>
+
+{% block content %}
+    <div class="min-h-screen bg-gray-500 py-6 flex flex-col justify-center sm:py-12">
+  <div class="flex space-x-4 px-4 justify-around">
+    <!-- CARD -->
+    <div class="bg-gradient-to-t from-black via-pink-900 to-pink-700  h-72 w-28 md:w-96 md:rounded-3xl rounded-full shadow-md relative flex flex-col items-center justify-between md:items-start py-5 md:p-5 transition-all duration-150">
+      <!-- TEXTS -->
+      <div class="transform -rotate-90 md:rotate-0 align-middle text-2xl font-semibold text-gray-200 text-center m-auto md:m-0 md:mt-8">{{ rapportvisite.visiteur.praticien.nom }} {{ rapportvisite.visiteur.praticien.prenom }}</div>
+      <ul class="text-lg text-gray-300 font-light hidden md:block">
+        <p> Date de Visite : {{ rapportvisite.datevisite }} </p>
+        <p> Date de Rédaction : {{ rapportvisite.daterapport }} </p>
+        <p> Coefficient : {{ rapportvisite.visiteur.praticien.coefNotoriete }} </p>
+        <p> Bilan : {{ rapportvisite.bilan }} </p>
+      </ul>
+
+      <!-- BUTTONS -->
 
     </div>
+  </div>
+</div>
 {% endblock %}
